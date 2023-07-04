@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="main">
+        <h1>Student Management CRUD</h1>
+        <div id="inputs">
+            <input type="text" class="txt" id="nameTxt" placeholder="Name">
+            <input type="email" class="txt" id="emailTxt" placeholder="Email">
+            <input type="text" class="txt" id="gpaTxt" placeholder="GPA">
+            <input type="number" class="txt" id="ageTxt" placeholder="Age">
+            <input type="text" class="txt" id="degreeTxt" placeholder="Degree">
+        
+        </div>
+        <div id="serchTab">
+            
+            <button class="btn" id="addStudent" onclick="addStudent()">Add Student</button>
+            <input type="search" id="searchTxt" placeholder="Search By Name, email or degree">
+
+            <div id="table">
+                <table>
+                    <tr>
+                      <th>ID</th>
+                      <th>Student Name</th>
+                      <th>Email</th>
+                      <th>Age</th>
+                      <th>GPA</th>
+                      <th>Degree</th>
+                      
+                    </tr>
+                    <tr>
+                      <td>0</td>
+                      <td>Alice</td>
+                      <td>Email@gmail.com</td>
+                      <td>21</td>
+                      <td>A</td>
+                      <td>BTech
+                       <span id="icon">
+                         <i onclick="editRow(this)" class="fa fa-user-pen"></i>
+                         <i onclick="deleteRow(this)" class="fa fa-trash"></i>
+                       </span>
+                      </td>
+                    </tr>
+                   
+                    
+                  </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/76e8ba3236.js" crossorigin="anonymous"></script>
+</body>
+</html>
