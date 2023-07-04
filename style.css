@@ -96,7 +96,7 @@ td{
 }
 @media screen and (max-width: 480px) {
     body {
-      background-color: lightgreen;
+      /* background-color: lightgreen; */
     }
     .txt{
         width: 200px;
