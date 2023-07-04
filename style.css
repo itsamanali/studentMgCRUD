@@ -50,7 +50,7 @@ i{
     flex-direction: column;
     
 }
-#searchTxt{
+#searchBox{
     padding: 0px 10px;
     /* background-color: #FFF; */
     width: 100%;
@@ -62,7 +62,7 @@ i{
 }
 
 #table{
-    width: 1250px;
+    max-width: 1250px;
     border: 1px solid rgba(255, 255, 255, 0.50);
     min-height: 400px;
     margin: 0 10px;
