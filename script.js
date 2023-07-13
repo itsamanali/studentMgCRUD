@@ -19,7 +19,7 @@ function addStudent(e){
     student[0].gpa = gpaTxt.value;
     student[0].age =  ageTxt.value;
     student[0].degree = degreeTxt.value;
-    // console.log(studentArr);
+    
    
     addBtn.textContent =  "Add Student";
     refresh();
@@ -89,7 +89,7 @@ searchBox.addEventListener('input', function() {
 
 function refresh(){
     let tableT = document.getElementById("table").firstElementChild.firstElementChild;
-    // console.log(tableT.innerT);
+   
     tableT.innerHTML=""
     let newRowH = document.createElement('tr');
     newRowH.innerHTML=`
@@ -126,16 +126,12 @@ function refresh(){
    ageTxt.value="";
    degreeTxt.value="";
 
-  //  let storeString = JSON.stringify(studentArr);
-  //  localStorage.setItem("data",storeString);
-  //  let savedData = localStorage.getItem("data");
-  //  studentArr = JSON.parse(savedData);
-  //  console.log(studentArr);
+ 
 }
 
 function deleteRow(e){
   let toBeRemoved =e.parentElement.parentElement.parentElement;
-  console.log(toBeRemoved.firstElementChild);
+ 
   toBeRemoved.remove();
   let newArr = studentArr.filter((e)=>{
     return e.id != toBeRemoved.firstElementChild.innerText;
@@ -166,7 +162,7 @@ function saveData(){
   
   localStorage.setItem("data",JSON.stringify(studentArr));
   studentArr = JSON.parse(localStorage.getItem("data"));
-  console.log(studentArr);
+
 }
  
 
