@@ -4,6 +4,10 @@ const tableBody = document.querySelector("tbody");
 let idTobeUpdate = undefined;
 
 let studentArr = [];
+if(localStorage.getItem("data")){
+  studentArr=JSON.parse(localStorage.getItem("data"));
+  renderFilteredStudentTable(studentArr);
+}
 let studentCount = 0;
 function addStudent(e){
   if(e.textContent == "Edit Student" && idTobeUpdate){
@@ -19,6 +23,7 @@ function addStudent(e){
    
     addBtn.textContent =  "Add Student";
     refresh();
+    saveData();
   }else{
 
      studentCount++;
@@ -32,6 +37,7 @@ function addStudent(e){
   }
   studentArr.push(student);
   refresh();
+  saveData();
 
   }
 }
@@ -119,6 +125,12 @@ function refresh(){
    gpaTxt.value="";
    ageTxt.value="";
    degreeTxt.value="";
+
+  //  let storeString = JSON.stringify(studentArr);
+  //  localStorage.setItem("data",storeString);
+  //  let savedData = localStorage.getItem("data");
+  //  studentArr = JSON.parse(savedData);
+  //  console.log(studentArr);
 }
 
 function deleteRow(e){
@@ -129,12 +141,12 @@ function deleteRow(e){
     return e.id != toBeRemoved.firstElementChild.innerText;
   })
   studentArr = newArr;
-  
+  saveData();
 }
 
 function editRow(e){
     addBtn.textContent =  "Edit Student";
-    // console.log(addBtn.innerText);
+
     
     let toBeEdit =e.parentElement.parentElement.parentElement;
     let arr = toBeEdit.children;
@@ -147,10 +159,15 @@ function editRow(e){
     gpaTxt.value=arr[4].innerText;
     degreeTxt.value=arr[5].innerText;
 
-    // let objidx = studentArr.findIndex((obj => obj.id == idx));
-    // studentArr[idx].name="aman";
-    // console.log("arr",studentArr);
-
+    saveData();
 }
+
+function saveData(){
+  
+  localStorage.setItem("data",JSON.stringify(studentArr));
+  studentArr = JSON.parse(localStorage.getItem("data"));
+  console.log(studentArr);
+}
+ 
 
 
